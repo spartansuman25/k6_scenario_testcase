@@ -40,7 +40,6 @@ export default function () {
         check(response, {
             "response should have the created todo": res => res.json()[0]._id === todoID,
         });
-        console.log(JSON.stringify(response.json()[0]));
 
         check(response, {
             "response should have the correct state": res => res.json()[0].completed === false,

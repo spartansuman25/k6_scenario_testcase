@@ -1,32 +1,39 @@
-[![CircleCI](https://circleci.com/gh/mwaz/http-request-testing-with-k6.svg?style=svg)](https://circleci.com/gh/mwaz/http-request-testing-with-k6)
+[![CircleCI](https://circleci.com/gh/mwaz/api-performance-testing-with-k6.svg?style=svg)](https://circleci.com/gh/mwaz/api-performance-testing-with-k6)
 
 <p align="center"><img src="https://avatars3.githubusercontent.com/u/59034516"></p>
 
 
 ## Running tests
-### Running ENV specific Tests: 
+### Running performance tests
  To run environment specific tests, we will use the following commands.
 
-1. For DEV environment tests: 
-```bash
-k6 run scenario-tests/todos-development-tests.js
-```
-
-2. For STAGING environment tests: 
-```bash
-k6 run scenario-tests/todos-staging-tests.js
-```
-
-### Running Normal API Tests:
-
+1. For create todo tests: 
 ```bash
 k6 run todos-testing.js
 ```
+
+2. For create todo and fetch tests: 
+```bash
+k6 run create-and-fetch-todo-http-request.js
+```
+
+3. For create todo and fetch tests with Trends: 
+```bash
+k6 run create-todo-http-request.js
+```
+
+4. For create todo tests with Cloud output: 
+```bash
+export K6_CLOUD_TOKEN=<your-token>
+
+k6 run --out cloud create-todo-http-request.js
+```
+
 ## Details
 
 This repo is built following a tutorial published on CircleCI blog under the CircleCI Guest Writer Program.
 
-- Blog post: [HTTP request testing with k6][blog]
+- Blog post: [API Performance testing with k6][blog]
 - Author's GitHub profile: [Waweru Mwaura][author]
 
 ### About CircleCI Guest Writer Program
@@ -36,7 +43,7 @@ Join a team of freelance writers and write about your favorite technology topics
 Reviewers: [Ron Powell][ron], [Stanley Ndagi][stan]
 
 
-[blog]: https://circleci.com/blog/http-request-testing-with-k6/
+[blog]: https://circleci.com/blog/api-performance-testing-with-k6/
 [author]: https://github.com/mwaz
 
 [gwp-program]: https://circle.ci/3ahQxfu

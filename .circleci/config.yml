@@ -5,8 +5,4 @@ workflows:
   load_test:
     jobs:
       - k6io/test:
-          script: todos-testing.js
-      - k6io/test:
-          script: scenario-tests/todos-development-tests.js
-      - k6io/test:
-          script: scenario-tests/todos-development-tests.js 
+          script: create-todo-http-request.js
