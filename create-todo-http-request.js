@@ -30,7 +30,6 @@ export default function () {
         );
         todoCreationTrend.add(response.timings.duration);
         todoID = response.json()._id;
-        console.log(JSON.stringify(response.body));
         check(response, {
             "status code should be 200": res => res.status === 200,
         });

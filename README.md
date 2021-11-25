@@ -2,7 +2,6 @@
 
 <p align="center"><img src="https://avatars3.githubusercontent.com/u/59034516"></p>
 
-
 ## Running tests
 ### Running performance tests
  To run environment specific tests, we will use the following commands.
