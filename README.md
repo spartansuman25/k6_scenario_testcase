@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/mwaz/api-performance-testing-with-k6.svg?style=svg)](https://circleci.com/gh/mwaz/api-performance-testing-with-k6)
+[![CircleCI](https://circleci.com/gh/CIRCLECI-GWP/api-performance-testing-with-k6/tree/main.svg?style=svg)](https://circleci.com/gh/CIRCLECI-GWP/api-performance-testing-with-k6/tree/main)
 
 <p align="center"><img src="https://avatars3.githubusercontent.com/u/59034516"></p>
 
@@ -6,22 +6,22 @@
 ### Running performance tests
  To run environment specific tests, we will use the following commands.
 
-1. For create todo tests: 
+1. For create todo tests:
 ```bash
 k6 run todos-testing.js
 ```
 
-2. For create todo and fetch tests: 
+2. For create todo and fetch tests:
 ```bash
 k6 run create-and-fetch-todo-http-request.js
 ```
 
-3. For create todo and fetch tests with Trends: 
+3. For create todo and fetch tests with Trends:
 ```bash
 k6 run create-todo-http-request.js
 ```
 
-4. For create todo tests with Cloud output: 
+4. For create todo tests with Cloud output:
 ```bash
 export K6_CLOUD_TOKEN=<your-token>
 
