@@ -1,5 +1,6 @@
 # k6_scenario_testcase
-setup get and post api's
-run  k6 run create-and-fetch-departments-request.js
-k6 run create-departments-http-request.js  
+Run exsiting get and post api's in local server.
+Run  "k6 run create-and-fetch-departments-request.js"
+Run  "k6 run create-departments-http-request.js"  
 Moniter the result
+Enjoy
