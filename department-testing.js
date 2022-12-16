@@ -11,36 +11,40 @@ export let options = {
 
 export default function () {
     group('API uptime check', () => {
-        const response = http.get('https://todo-app-barkend.herokuapp.com/todos/');
+        const response = http.get('http://localhost:8082/api/departments');
         check(response, {
             "status code should be 200": res => res.status === 200,
         });
     });
 
-    let todoID;
-    group('Create a Todo', () => {
-        const response = http.post('https://todo-app-barkend.herokuapp.com/todos/',
-            { "task": "write k6 tests" }
+    let departmentId;
+    group('Create a Departments', () => {
+        const response = http.post('http://localhost:8082/api/departments',
+            {
+                "title":"test",
+                "description":"description",
+                "published":"true"
+            }
         );
-        todoID = response.json()._id;
+
+        departmentId = response.json()._id;
         check(response, {
             "status code should be 200": res => res.status === 200,
         });
         check(response, {
-            "response should have created todo": res => res.json().completed === false,
+            "response should have created Departments": res => res.json().completed === false,
         });
     })
 
-    group('get a todo item', () => {
-        const response = http.get(`https://todo-app-barkend.herokuapp.com/todos/${todoID}`
+    group('Get a Department ', () => {
+        const response = http.get('http://localhost:8082/api/departments'
         );
         check(response, {
             "status code should be 200": res => res.status === 200,
         });
         check(response, {
-            "response should have the created todo": res => res.json()[0]._id === todoID,
+            "response should have the created Department": res => res.json()[0]._id === departmentId,
         });
-        console.log(JSON.stringify(response.json()[0]));
 
         check(response, {
             "response should have the correct state": res => res.json()[0].completed === false,

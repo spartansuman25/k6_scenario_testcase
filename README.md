@@ -8,24 +8,24 @@
 
 1. For create todo tests:
 ```bash
-k6 run todos-testing.js
+k6 run employee-testing.js
 ```
 
 2. For create todo and fetch tests:
 ```bash
-k6 run create-and-fetch-todo-http-request.js
+k6 run create-and-fetch-departments-request.js
 ```
 
 3. For create todo and fetch tests with Trends:
 ```bash
-k6 run create-todo-http-request.js
+k6 run create-departments-http-request.js
 ```
 
 4. For create todo tests with Cloud output:
 ```bash
 export K6_CLOUD_TOKEN=<your-token>
 
-k6 run --out cloud create-todo-http-request.js
+k6 run --out cloud create-departments-http-request.js
 ```
 
 ## Details

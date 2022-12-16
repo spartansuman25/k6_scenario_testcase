@@ -20,28 +20,31 @@ export default function () {
         });
     });
 
-    let todoID;
-    group('Create a Todo', () => {
-        const response = http.post(`${__ENV.BASE_URL}`, 
-        {task: "write k6 tests"}
-        );
-        todoID = response.json()._id;
+    let departmentId;
+    group('Create a Departments', () => {
+        const response = http.post(`${__ENV.BASE_URL}`,
+            {
+                "title":"test",
+                "description":"description",
+                "published":"true"
+            }      );
+        departmentId = response.json()._id;
         check(response, {
             "status code should be 200": res => res.status === 200,
         });
         check(response, {
-            "response should have created todo": res => res.json().completed === false,
+            "response should have created Department": res => res.json().completed === false,
         });
     })
 
-     group('get a todo item', () => {
-        const response = http.get(`${__ENV.BASE_URL}${todoID}`
+     group('get a department', () => {
+        const response = http.get(`${__ENV.BASE_URL}${departmentId}`
         );
         check(response, {
             "status code should be 200": res => res.status === 200,
         });
         check(response, {
-            "response should have the created todo": res => res.json()[0]._id === todoID,
+            "response should have the created department": res => res.json()[0]._id === departmentId,
         });
         console.log(JSON.stringify(response.json()[0]));
 
@@ -50,7 +53,7 @@ export default function () {
         });
     })
 
-    group('delete all Todos', () => {
+    group('delete all employee', () => {
         let response = http.del(`${__ENV.BASE_URL}`
         );
 

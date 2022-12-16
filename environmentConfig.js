@@ -1,6 +1,6 @@
 export function developmentConfig(filename) {
     let envConfig = {
-      BASE_URL: "http://todo-app-barkend.herokuapp.com/todos/",
+      BASE_URL: "http://localhost:8082/api/departments",
       ENV: "DEVELOPMENT",
     };
     return Object.assign({}, envConfig, filename);
@@ -8,7 +8,7 @@ export function developmentConfig(filename) {
   
   export function stagingConfig(filename) {
     let envConfig = {
-      BASE_URL: "https://todo-app-barkend.herokuapp.com/todos/",
+      BASE_URL: "http://localhost:8082/api/departments",
       ENV: "STAGING",
     };
     return Object.assign({}, envConfig, filename);

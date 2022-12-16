@@ -5,4 +5,4 @@ workflows:
   load_test:
     jobs:
       - k6io/test:
-          script: create-todo-http-request.js
+          script: create-departments-http-request.js
